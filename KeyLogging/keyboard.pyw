@@ -17,8 +17,8 @@ def OnKeyboardEvent(event):
     global window_name
 
     """if typing in new window"""
-    if(window_name != event.WindowName):
-        if(line_buffer != ""):
+    if window_name != event.WindowName:
+        if line_buffer != "":
             line_buffer += '\n'
             SaveLineToFile(line_buffer)
 
@@ -34,13 +34,13 @@ def OnKeyboardEvent(event):
         return True
 
     """if backspace key pressed"""
-    if(event.Ascii == 8):
+    if event.Ascii == 8:
         line_buffer = line_buffer[:-1]
         return True
 
     """if non-normal ascii character"""
     if(event.Ascii < 32 or event.Ascii > 126):
-        if(event.Ascii == 0):
+        if event.Ascii == 0:
             pass
         else:
             line_buffer = line_buffer + '\n' + str(event.Ascii) + '\n'
