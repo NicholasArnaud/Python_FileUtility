@@ -60,6 +60,3 @@ pythoncom.PumpMessages() #red line says it doesn't exist but it does
 #server.starttls()
 #server.login("arnaudnicholas@gmail.com","StelarFoil71")
 
-#file = "open(file_name, 'r')"
-#server.sendmail("arnaudnicholas@gmail.com","cobrahead09@gmail.com",file)
-#server.quit()
